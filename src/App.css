@@ -1,3 +1,5 @@
+/***** MAIN APPLICATION ******/
+
 .app {
   width: 85%;
   margin: auto;
@@ -20,6 +22,7 @@ header {
   letter-spacing: 1.5px;
 }
 
+/***** QUICKSTART COMPONENT ******/
 
 .quickstart {
   background-color: #333333;
@@ -31,4 +34,51 @@ header {
 
 .quickstart h1 {
   margin-top: 0;
+}
+
+/***** NAMELIST COMPONENT ******/
+
+.namelist-sorting {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.namelist-sorting button {
+  color: #999999;
+  font-weight: bold;
+  border: none;
+  background: none;
+  font-size: 1.0em;
+}
+
+.namelist-sorting .sort-active {
+  color: #444444;
+}
+
+
+.namelist {
+  background-color: #eeeeee;
+  padding: 1.5em;
+}
+
+.namelist-data-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.0em;
+  font-weight: bold;
+}
+
+
+
+.namelist-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 3px 0px;
+  border-bottom: 2px solid #cccccc;
+}
+
+.namelist-item:last-child {
+  border-bottom: none;
 }
