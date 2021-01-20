@@ -1,11 +1,17 @@
 import React from 'react';
 
+// import names.json and sort by name so we can grab best match by alphabetical order
 const names = require('./names.json').names.sort( (a, b) => a.name > b.name);
 
 class Search extends React.Component {
     constructor(props) {
         super(props);
         
+        /*
+            totalResults - show total number of results from the search query, names.json length for empty search
+            matchFound - boolean used for showing best match under the search input
+            bestMatch - holds the current selected best match object from names to be displayed for the user
+        */
         this.state = {
             totalResults: names.length,
             matchFound: false,
@@ -13,6 +19,8 @@ class Search extends React.Component {
         }
     }
     
+    // fired on search input onchange events
+    // queries names.json (= const names) for matches and changes class state accordingly
     searchOnChange(event) {
         const search = event.target.value.toLowerCase();
 
@@ -34,6 +42,7 @@ class Search extends React.Component {
         }
     }
 
+    // used for hiding and showing search results if results are 0, all or inbetween
     showMatch() {
         if (this.state.matchFound) {
             return <span>Best match: {this.state.bestMatch.name} ({this.state.bestMatch.amount})</span>;
