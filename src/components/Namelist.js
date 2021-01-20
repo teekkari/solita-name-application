@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from './Search';
 
 const names = require('./names.json').names;
 
@@ -60,8 +61,9 @@ class Namelist extends React.Component {
 
     render() {
         return <div className="namelist">
+        <Search />
         <div className="namelist-sorting">
-            <span className="namelist-sorting-sortby">Sort by</span>
+            <div className="namelist-sorting-sortby">Sort by</div>
             <button className={this.state.sortBy === 'name' ? "sort-active" : ""} onClick={ () => this.sortOnClick('name') }>Name</button>
             <button className={this.state.sortBy === 'amount' ? "sort-active" : ""} onClick={ () => this.sortOnClick('amount') }>Amount</button>
         </div>
