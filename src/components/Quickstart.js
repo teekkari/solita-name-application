@@ -10,10 +10,11 @@ function Quickstart() {
             <h1>Quickstart</h1>
 
             <h2>Sorting</h2>
-            <div className="text">By clicking on the labels <b>Name</b> or <b>Amount</b>, you can sort the list in alphabetical or numerical order.</div>
+            <p>By clicking on the labels <b>Name</b> or <b>Amount</b>, you can sort the list in alphabetical or numerical order.</p>
+            <p>Clicking again on the active sorting label changes order between ascending and descending.</p>
 
             <h2>Searching</h2>
-            <div className="text">You can search a name and its popularity with the search bar on top of the list.</div>
+            <p className="text">You can search a name and its popularity with the search bar on top of the list.</p>
         </div>
     </div>
     );
