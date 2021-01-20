@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Solita Name Application 2021
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a front-end application for Solita Dev Academy recruiting assignment.
 
-## Available Scripts
+## Technologies used
 
-In the project directory, you can run:
+ReactJS, vanilla CSS
 
-### `npm start`
+## Write up on process
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I started by sketching up some designs in Figma for desktop and mobile devices. I approached the problem mobile-first. This kind of application is easily designed for mobile as the structure of the application works well in a column layout.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Here's the initial design.
 
-### `npm test`
+![Figma design document](https://i.ibb.co/pf1nRyx/solita-figma-sketch.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Now that I had the layout and design I was looking for I began by creating an empty react application. The most logical way to split the application was into 3 components: quick start information panel, the actual list of names / data and a search functionality.
 
-### `npm run build`
+Usually I create CSS files for each component separately, but the application wasn't going to be large so I opted for a single CSS file to speed up the process.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Quick start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This is just a simple text-containing element so I created a function component and styled it according to my Figma document.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Name list
 
-### `npm run eject`
+The name list component needed some interactivity (sorting) so I created a class component to hold the sorting parameters in the class state which allowed me to easily update the results by updating the state.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I created buttons with onClick handlers for sorting by name and amount and some rudimentary logic to decide whether to change the sort by parameter or switch between ascending and descending. Rest was pretty much just styling it to spec. Due to the sorting happening on click events, I had to sort intially by amount in the constructor before passing the data into the class state.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Search
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The search component was mostly interaction and logic, so it needed to be a class component as well. I first thought about just executing the search on click but then decided it would be better for the user if the results updated in real time. I opted for an onChange handler which used Array.filter to query names.json values for matching names. This also made it easy to display the total number of names in the application when you first open the page, and the tally would update nicely when you entered a more specific search query. 
+I added conditions to only show "Best match" if results were between 0 and total names. The "Best match" logic was just sorting the list alphabetically and selecting the first element after filtering the name array.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I used an SVG for the search icon, which is from iconmonstr.com. Their license allows this kind of use and only forbids selling their icons individually or using them as a main part of a product (e.g printing it on a t-shirt).
 
-## Learn More
+## Final notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I thought about adding a backend in NodeJS to allow for adding and removing names, but decided I didn't really have the time for it right now. Implementing a backend for just one API route for listing the names didn't seem worth it to me. I have some backend API examples in my other projects (e.g. habits repo)
