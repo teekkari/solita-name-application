@@ -1,4 +1,5 @@
 import './App.css';
+import Quickstart from './components/Quickstart';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       </header>
 
       <main>
-        
+        <Quickstart />
       </main>
     </div>
   );
