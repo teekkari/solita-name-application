@@ -55,6 +55,8 @@ header {
   background: none;
   font-size: 1.0em;
   font-family: 'Roboto', sans-serif;
+  padding: 0px;
+  margin-right: 10px;
 }
 
 .namelist-sorting .sort-active {
@@ -113,10 +115,11 @@ header {
   margin-bottom: 0.75em;
 }
 
-.search-results {
-  display: flex;
-  justify-content: space-between;
-  height: 0px;
-  overflow: hidden;
-  transition: height 0.15s;
+
+.search-total-results {
+  font-weight: bold;
+}
+
+.search-best-match {
+  font-weight: bold;
 }
