@@ -42,6 +42,8 @@ header {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
 }
 
 .namelist-sorting-sortby {
@@ -57,6 +59,9 @@ header {
   font-family: 'Roboto', sans-serif;
   padding: 0px;
   margin-right: 10px;
+}
+.namelist-sorting button:last-of-type {
+  margin-right: 0px;
 }
 
 .namelist-sorting .sort-active {

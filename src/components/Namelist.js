@@ -67,8 +67,10 @@ class Namelist extends React.Component {
         <Search />
         <div className="namelist-sorting">
             <div className="namelist-sorting-sortby">Sort by</div>
-            <button className={this.state.sortBy === 'name' ? "sort-active" : ""} onClick={ () => this.sortOnClick('name') }>Name</button>
-            <button className={this.state.sortBy === 'amount' ? "sort-active" : ""} onClick={ () => this.sortOnClick('amount') }>Amount</button>
+            <div className="namelist-sorting-sortbuttons">
+                <button className={this.state.sortBy === 'name' ? "sort-active" : ""} onClick={ () => this.sortOnClick('name') }>Name</button>
+                <button className={this.state.sortBy === 'amount' ? "sort-active" : ""} onClick={ () => this.sortOnClick('amount') }>Amount</button>
+            </div>
         </div>
         
         <div className="namelist-data">
