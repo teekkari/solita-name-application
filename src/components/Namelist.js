@@ -7,8 +7,8 @@ class Namelist extends React.Component {
     constructor(props) {
         super(props);
 
-        // sort names to initially show them in alphabetical order
-        const sortedNames = names.sort( (a, b) => a.name > b.name );
+        // sort names to initially show them in descending numerical order based on amount
+        const sortedNames = names.sort( (a, b) => a.amount < b.amount );
         
         this.state = {
             listData: sortedNames,
@@ -26,6 +26,11 @@ class Namelist extends React.Component {
         }
     }
 
+
+    // called when user clicks sorting buttons (Name, Amount)
+    // clicking on non-active button: changes the sortBy value and sets sortAscending based on sorting parameter
+    // clicking on active button: flips sortAscending boolean
+    // changes class state
     sortOnClick(sortBy) {
 
         if (this.state.sortBy === sortBy) {
@@ -35,8 +40,6 @@ class Namelist extends React.Component {
             const ascending = sortBy === 'name' ? true : false;
             this.setState({ sortBy: sortBy, sortAscending: ascending });
         }
-
-        this.sortData();
     }
 
 
