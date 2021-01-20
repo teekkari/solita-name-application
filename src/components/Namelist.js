@@ -16,22 +16,34 @@ class Namelist extends React.Component {
         }
     }
 
-    // sorts the names with the current parameters and changes the state for names
+    // sorts the names with the current parameters and return sorted list
     sortData() {
         if (this.state.sortAscending) {
-            this.setState({
-                listData: this.state.listData.sort( (a, b) => a[this.state.sortBy] > b[this.state.sortBy])
-            });
+            return this.state.listData.sort( (a, b) => a[this.state.sortBy] > b[this.state.sortBy]);
         } else {
-            this.setState({
-                listData: this.state.listData.sort( (a, b) => a[this.state.sortBy] < b[this.state.sortBy])
-            });
+            return this.state.listData.sort( (a, b) => a[this.state.sortBy] < b[this.state.sortBy]);
         }
+    }
+
+    sortOnClick(sortBy) {
+
+        if (this.state.sortBy === sortBy) {
+            this.setState({ sortAscending: !this.state.sortAscending });
+        } else {
+            // by default names are sorted ascending and amounts descending
+            const ascending = sortBy === 'name' ? true : false;
+            this.setState({ sortBy: sortBy, sortAscending: ascending });
+        }
+
+        this.sortData();
     }
 
 
     // renders this.state.listData in a list = returns array of JSX
     renderNameListData() {
+
+        const sortedData = this.sortData();
+
         let outputList = [];
         for (let name of this.state.listData) {
             outputList.push(
@@ -47,10 +59,21 @@ class Namelist extends React.Component {
 
 
     render() {
-        return <>
-        <button onClick={ () => this.sortData() }>Test Sort</button>
-        {this.renderNameListData()}
-        </>;
+        return <div className="namelist">
+        <div className="namelist-sorting">
+            <span className="namelist-sorting-sortby">Sort by</span>
+            <button className={this.state.sortBy === 'name' ? "sort-active" : ""} onClick={ () => this.sortOnClick('name') }>Name</button>
+            <button className={this.state.sortBy === 'amount' ? "sort-active" : ""} onClick={ () => this.sortOnClick('amount') }>Amount</button>
+        </div>
+        
+        <div className="namelist-data">
+            <div className="namelist-data-header">
+                <div className="header-name">Name</div>
+                <div className="header-amount">Amount</div>
+            </div>
+            {this.renderNameListData()}
+            </div>
+        </div>;
     }
 }
 
