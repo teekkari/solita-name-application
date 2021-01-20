@@ -44,12 +44,17 @@ header {
   margin-bottom: 1em;
 }
 
+.namelist-sorting-sortby {
+  margin-right: 10px;
+}
+
 .namelist-sorting button {
   color: #999999;
   font-weight: bold;
   border: none;
   background: none;
   font-size: 1.0em;
+  font-family: 'Roboto', sans-serif;
 }
 
 .namelist-sorting .sort-active {
@@ -60,6 +65,9 @@ header {
 .namelist {
   background-color: #eeeeee;
   padding: 1.5em;
+  border-radius: 0px 0px 10px 10px;
+
+  margin-bottom: 1.5em;
 }
 
 .namelist-data-header {
