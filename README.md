@@ -1,6 +1,6 @@
 # Solita Name Application 2021
 
-This is a front-end application for Solita Dev Academy recruiting assignment.
+This is a front-end application for Solita Dev Academy recruiting assignment.  
 Time used: 4 hours. 1 hour of design and 3 hours of developing.
 
 ## Technologies used
