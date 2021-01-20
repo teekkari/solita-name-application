@@ -49,9 +49,9 @@ class Namelist extends React.Component {
         const sortedData = this.sortData();
 
         let outputList = [];
-        for (let name of this.state.listData) {
+        for (let name of sortedData) {
             outputList.push(
-                <div className="namelist-item">
+                <div key={name.name} className="namelist-item">
                     <div className="namelist-name">{name.name}</div>
                     <div className="namelist-amount">{name.amount}</div>
                 </div>
