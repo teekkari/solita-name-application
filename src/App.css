@@ -12,7 +12,7 @@ header {
 
 .app-title {
   margin-bottom: 0;
-  font-size: 2.5em;
+  font-size: 2.3em;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
@@ -122,4 +122,32 @@ header {
 
 .search-best-match {
   font-weight: bold;
+}
+
+
+/***** MEDIA QUERIES ******/
+
+@media screen and (min-width: 1200px) {
+
+  .app {
+    width: 1000px;
+    margin: auto;
+  }
+
+  main {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  .namelist {
+    width: 60%;
+    border-radius: 10px;
+  }
+
+  .quickstart {
+    width: 30%;
+    border-radius: 10px;
+    height: fit-content;
+  }
 }
