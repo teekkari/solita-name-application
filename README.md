@@ -3,6 +3,8 @@
 This is a front-end application for Solita Dev Academy recruiting assignment.  
 Time used: 4 hours. 1 hour of design and 3 hours of developing.
 
+Live demo: http://solita-name-application.herokuapp.com/
+
 ## Technologies used
 
 ReactJS, vanilla CSS
