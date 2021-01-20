@@ -1,4 +1,5 @@
 import './App.css';
+import Namelist from './components/Namelist';
 import Quickstart from './components/Quickstart';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
       <main>
         <Quickstart />
+        <Namelist />
       </main>
     </div>
   );
