@@ -40,4 +40,4 @@ I used an SVG for the search icon, which is from iconmonstr.com. Their license a
 
 ## Final notes
 
-I thought about adding a backend in NodeJS to allow for adding and removing names, but decided I didn't really have the time for it right now. Implementing a backend for just one API route for listing the names didn't seem worth it to me. I have some backend API examples in my other projects (e.g. habits repo)
+I thought about adding a backend in NodeJS to allow for adding and removing names, but decided I didn't really have the time for it right now. Implementing a backend for just one API route for listing the names didn't seem worth it to me. I have some backend API examples in my other projects (e.g. staysane repo)
